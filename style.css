@@ -1,0 +1,145 @@
+/* Add Font Awesome icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+/* General body and layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header section */
+header {
+    background-color: #FFD700; /* Yellow color */
+    color: #333; /* Darker text color for readability */
+    padding: 20px;
+    text-align: left;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.header-content h1, .header-content .tagline {
+    margin: 0;
+}
+
+header nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.tagline {
+    font-size: 14px;
+    font-style: italic;
+    color: #bbb;
+    margin-top: 5px;
+}
+
+/* Navbar styling */
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.nav-list li {
+    position: relative;
+}
+
+.nav-list a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-list a i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+/* Main content */
+main {
+    flex: 1;
+    padding: 120px 20px 20px; /* Padding top to prevent overlap with the fixed header */
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Dialogue box styling */
+.dialogue-box {
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 30px;
+    margin: 20px auto;
+    width: 60%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.dialogue-box h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.dialogue-box p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.dialogue-box .btn {
+    background-color: #FFD700; /* Yellow button */
+    color: black;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+}
+
+.dialogue-box .btn:hover {
+    background-color: #f0c420;
+}
+
+/* Footer section */
+footer {
+    background-color: #FFD700; /* Yellow color */
+    color: #333;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-left {
+    font-s

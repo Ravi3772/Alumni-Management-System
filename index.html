@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohan Babu University - Alumni Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add Font Awesome icons */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+        /* General body and layout */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header section */
+        header {
+            background-color: #FFD700; /* Yellow color */
+            color: #333; /* Darker text color for readability */
+            padding: 20px;
+            text-align: left;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        .header-content h1, .header-content .tagline {
+            margin: 0;
+        }
+
+        header nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .tagline {
+            font-size: 14px;
+            font-style: italic;
+            color: #bbb;
+            margin-top: 5px;
+        }
+
+        /* Navbar styling */
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        .nav-list li {
+            position: relative;
+        }
+
+        .nav-list a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-list a i {
+            margin-right: 8px; /* Space between icon and text */
+        }
+
+        /* Main content */
+        main {
+            flex: 1;
+            padding: 120px 20px 20px; /* Padding top to prevent overlap with the fixed header */
+            height: 100vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Dialogue box styling */
+        .dialogue-box {
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+            padding: 30px;
+            margin: 20px auto;
+            width: 60%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        .dialogue-box h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .dialogue-box p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .dialogue-box .btn {
+            background-color: #FFD700; /* Yellow button */
+            color: black;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .dialogue-box .btn:hover {
+            background-color: #f0c420;
+        }
+
+        /* Footer section */
+        footer {
+            background-color: #FFD700; /* Yellow color */
+            color: #333;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .footer-left {
+            font-size: 14px;
+        }
+
+        .footer-right {
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links li a {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .social-links li a:hover {
+            color: #ddd;
+        }
+
+        /* Mobile Responsive Footer */
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-right {
+                margin-top: 15px;
+            }
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .dialogue-box {
+                width: 90%;
+                padding: 20px;
+            }
+
+            .dialogue-box h2 {
+                font-size: 1.8rem;
+            }
+
+            .dialogue-box p {
+                font-size: 1rem;
+            }
+
+            .dialogue-box .btn {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Mohan Babu University</h1>
+            <p class="tagline">Alumni Manager</p>
+        </div>
+        <div> <nav>
+            <ul class="nav-list">
+                <li><a href="#" onclick="loadPage('home')"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="#" onclick="loadPage('about-us')"><i class="fa fa-info-circle"></i> About Us</a></li>
+                <li><a href="#" onclick="loadPage('events')"><i class="fa fa-calendar"></i> Events</a></li>
+                <li><a href="#" onclick="loadPage('new-alumni')"><i class="fa fa-user-plus"></i> New Alumni</a></li>
+                <li><a href="#" onclick="loadPage('new-staff')"><i class="fa fa-user-tie"></i> New Staff</a></li>
+                <li><a href="#" onclick="loadPage('login')"><i class="fa fa-sign-in-alt"></i> Login</a></li>
+            </ul>
+        </nav>
+       </div>
+    </header>
+
+    <main id="content">
+        <!-- Welcome Dialogue Box for Home -->
+        <div class="dialogue-box" id="home">
+            <h2>Welcome to Mohan Babu University's Alumni Network!</h2>
+            <p>Stay connected with your alma mater and fellow alumni. Join the network to receive updates, share experiences, and grow professionally.</p>
+            <a href="join-network.html" class="btn">Join the Network</a>
+            <a href="search-alumni.html" class="btn">Search Alumni</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>&copy; 2024 Mohan Babu University | Alumni Management System</p>
+            </div>
+            <div class="footer-right">
+                <ul class="social-links">
+                    <li><a href="https://facebook.com/mohanbabuuniversity" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/mohanbabuuni" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://linkedin.com/school/mohanbabuuniversity" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function loadPage(page) {
+            const content = document.getElementById('content');
+            const body = document.body;
+            
+            // Clear previous content
+            content.innerHTML = '';
+            
+            // Change background for each page
+            if (page === 'home') {
+                body.style.backgroundImage = "url('graduation-day-royalty-free-image-1647955863.webp')";
+            } else if (page === 'about-us') {
+                body.style.backgroundImage = "url('university.webp')"; // Set a different background for About Us
+            } else {
+                body.style.backgroundImage = "none"; // Reset for other pages
+            }
+
+            // Load new content based on selected page
+            switch (page) {
+                case 'home':
+                    content.innerHTML = `
+                        <div class="dialogue-box">
+                            <h2>Welcome to Mohan Babu University's Alumni Network!</h2>
+                            <p>Stay connected with your alma mater and fellow alumni. Join the network to receive updates, share experiences, and grow professionally.</p>
+                            <a href="join-network.html" class="btn">Join the Network</a>
+                            <a href="search-alumni.html" class="btn">Search Alumni</a>
+                        </div>
+                    `;
+                    break;
+                case 'about-us':
+                    content.innerHTML = `
+                        <div class="dialogue-box">
+                            <h2>About Us</h2>
+                            <p>Alumni are important for any educational institute as they carry the legacy of your institute’s values, tradition, and discipline. Managing a large alumni 				network is a cumbersome task but they really matter for the school. Maintain your legacy runners with the software service provider that has the same legacy 				of developing excellent software for the education domain. MBU offers you an out-of-world alumni management system.
+
+				Managing and updating the alumni list every year is a monotonous task. Keep the communication alive and stay in touch with your alumni with custom-made 				alumni management software. Our customized software will give you a platform where alumni can share their thoughts, ideas, contacts and keep the interaction 				active. The interaction with old friends and teachers will give them a feeling of being still active in their school.
+
+				Creating groups and communities, auto-send the notification of the events, also send invite via access link, social media-based activity wall is now a 					cakewalk. So, adopting a web-based system will help you to cater to everyone’s needs. Effective management will harness the power of tailor-made software 				that is fully functional and scalable. The easy and user-friendly interface will help your institute to retain long-term relationships with alumni.
+
+				Build an engaging network with alumni and facilitate the school for fund-raising from alumni students. Integrate your school ERP with a reliable payment 				gateway that will enable the alumni to do online transactions for fund transfer. Maintain the fund trail with an effective donation history. MBU’s 				alumni management system will also store the sponsor details for events.
+
+				Ditch the spreadsheet and documents for storing alumni information. Consolidate the social accounts of your alumni students and let them aware of what’s 				coming next. Maintain a solid bond you’re your students even after they leave your institute with the help of easy-to-maintain alumni management software 				from MBU.</p>
+                        </div>
+                    `;
+                    break;
+                case 'events':
+                    content.innerHTML = `
+                        <div class="dialogue-box">
+                            <h2>Upcoming Events</h2>
+                            <p>Check out our upcoming alumni events...</p>
+                        </div>
+                    `;
+                    break;
+                case 'new-alumni':
+                    content.innerHTML = `
+                        <div class="dialogue-box">
+                            <h2>New Alumni Registration</h2>
+                            <p>Fill out the form to become a part of our alumni network.</p>
+				<p><a href="newalumni.html">Start</a></p>
+                        </div>
+                    `;
+                    break;
+                case 'new-staff':
+                    content.innerHTML = `
+                        <div class="dialogue-box">
+                            <h2>New Staff Registration</h2>
+                            <p>Welcome new staff members! Register to join our staff network.</p>
+				<p><a href="newalumni.html">Start</a></p>
+                        </div>
+                    `;
+                    break;
+                case 'login':
+                    content.innerHTML = `
+                        <div class="dialogue-box">
+                            <h2>Login</h2>
+                            <p>Please log in to access your account.</p>
+                        </div>
+                    `;
+                    break;
+                default:
+                    content.innerHTML = `
+                        <div class="dialogue-box">
+                            <h2>Page Not Found</h2>
+                            <p>Sorry, the page you requested does not exist.</p>
+                        </div>
+                    `;
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
