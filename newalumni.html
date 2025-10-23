@@ -1,252 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Alumni Registration - Mohan Babu University</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Add Font Awesome icons */
-        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
-
-        /* General body and layout */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* Header section */
-        header {
-            background-color: #FFD700; /* Yellow color */
-            color: #333;
-            padding: 20px;
-            text-align: left;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 10;
-        }
-
-        .header-content h1, .header-content .tagline {
-            margin: 0;
-        }
-
-        header nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-
-        /* Main content section */
-        main {
-            flex: 1;
-            padding: 120px 20px 20px; /* Padding top to prevent overlap with the fixed header */
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .form-container {
-            background-color: #fff;
-            padding: 30px;
-            width: 100%;
-            max-width: 600px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .form-container form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        /* Flex row for labels and inputs */
-        .form-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .form-group label {
-            width: 30%;
-            font-weight: bold;
-            color: #333;
-            text-align: right;
-        }
-
-        .form-container input[type="text"],
-        .form-container input[type="email"],
-        .form-container input[type="password"],
-        .form-container input[type="file"],
-        .form-container textarea {
-            width: 70%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .form-container textarea {
-            resize: vertical;
-        }
-
-        .gender-group {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .form-container .btn {
-            background-color: #FFD700;
-            color: black;
-            padding: 10px;
-            font-size: 1rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            width: 100%;
-        }
-
-        .form-container .btn:hover {
-            background-color: #f0c420;
-        }
-
-        .form-container .already-member {
-            text-align: right;
-            font-size: 14px;
-            margin-top: 10px;
-        }
-
-        .form-container .already-member a {
-            color: #FFD700;
-            text-decoration: none;
-        }
-
-        .form-container .already-member a:hover {
-            color: #f0c420;
-        }
-
-        footer {
-            background-color: #FFD700;
-            color: #333;
-            padding: 10px 0;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            z-index: 10;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>New Alumni Registration</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-
-<header>
+<body style="background: #f9f9f9;">
+  <header>
     <div class="header-content">
-        <h1>Mohan Babu University</h1>
-        <p class="tagline">Alumni Manager</p>
+      <h1>Mohan Babu University</h1>
+      <p class="tagline">Alumni Manager</p>
     </div>
-</header>
+    <nav>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fa fa-info-circle"></i> About Us</a></li>
+        <li><a href="events.html"><i class="fa fa-calendar"></i> Events</a></li>
+        <li><a href="newalumni.html" target="_blank"><i class="fa fa-user-plus"></i> New Alumni</a></li>
+        <li><a href="directory.html"><i class="fa fa-users"></i> Directory</a></li>
+        <li id="loginTab"><a href="login.html"><i class="fa fa-sign-in-alt"></i> Login</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<main>
-    <div class="form-container">
-        <h2>New Alumni Registration</h2>
-        <form action="submit-form.php" method="post" enctype="multipart/form-data">
-            <!-- First Name -->
-            <div class="form-group">
-                <label for="first-name">First Name</label>
-                <input type="text" id="first-name" name="first-name" required>
-            </div>
+  <main>
+    <section class="form-container" style="margin-top:60px">
+      <h2>New Alumni Registration</h2>
+      <form id="alumniForm" action="#" method="post" enctype="multipart/form-data" autocomplete="off">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" required />
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" required />
+        </div>
+        <div class="form-group">
+          <label for="registeredId">Registered ID</label>
+          <input type="text" id="registeredId" name="registeredId" required />
+        </div>
+        <div class="form-group gender-group">
+          <label>Gender</label>
+          <div>
+            <input type="radio" id="male" name="gender" value="Male" /><label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female" /><label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="Other" /><label for="other">Other</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea id="address" name="address" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="photo">Profile Photo</label>
+          <input type="file" id="photo" name="photo" accept="image/*" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required />
+        </div>
+        <button type="submit" class="btn">Register</button>
+      </form>
+      <div id="successMsg" style="display:none;margin-top:42px;text-align:center;font-weight:bold;color:#228B22;font-size:1.15rem;">
+        Your request has been sent to the administrator.
+      </div>
+    </section>
+  </main>
 
-            <!-- Last Name -->
-            <div class="form-group">
-                <label for="last-name">Last Name</label>
-                <input type="text" id="last-name" name="last-name" required>
-            </div>
-
-            <!-- Registered ID -->
-            <div class="form-group">
-                <label for="registered-id">Registered ID</label>
-                <input type="text" id="registered-id" name="registered-id" required>
-            </div>
-
-            <!-- Gender -->
-            <div class="form-group">
-                <label>Gender</label>
-                <div class="gender-group">
-                    <label for="gender-male">
-                        <input type="radio" id="gender-male" name="gender" value="Male" required> Male
-                    </label>
-                    <label for="gender-female">
-                        <input type="radio" id="gender-female" name="gender" value="Female" required> Female
-                    </label>
-                    <label for="gender-other">
-                        <input type="radio" id="gender-other" name="gender" value="Other" required> Other
-                    </label>
-                </div>
-            </div>
-
-            <!-- Address -->
-            <div class="form-group">
-                <label for="address">Address</label>
-                <textarea id="address" name="address" rows="4" required></textarea>
-            </div>
-
-            <!-- Profile Photo -->
-            <div class="form-group">
-                <label for="photo">Profile Photo</label>
-                <input type="file" id="photo" name="photo" accept="image/*" required>
-            </div>
-
-            <!-- Email -->
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-
-            <!-- Password -->
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="form-group">
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
-            </div>
-
-            <!-- Submit Button -->
-            <button type="submit" class="btn">Register</button>
-
-            <!-- Already a Member Link -->
-            <div class="already-member">
-                <p>Already a member? <a href="login.html">Login here</a></p>
-            </div>
-        </form>
+  <footer>
+    <div class="footer-content">
+      <p>© 2024 Mohan Babu University Alumni Management System</p>
     </div>
-</main>
+  </footer>
 
-<footer>
-    <p>&copy; 2024 Mohan Babu University | Alumni Management System</p>
-</footer>
-
+  <script>
+    document.getElementById('alumniForm').onsubmit = function(e) {
+      e.preventDefault();
+      this.style.display='none';
+      document.getElementById('successMsg').style.display='block';
+    };
+  </script>
 </body>
 </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profile - Mohan Babu University</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>Mohan Babu University</h1>
+      <p class="tagline">Alumni Manager</p>
+    </div>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fa fa-info-circle"></i> About Us</a></li>
+        <li><a href="events.html"><i class="fa fa-calendar"></i> Events</a></li>
+        <li><a href="newalumni.html" target="_blank"><i class="fa fa-user-plus"></i> New Alumni</a></li>
+        <li><a href="directory.html"><i class="fa fa-users"></i> Directory</a></li>
+        <li><a href="profile.html"><i class="fa fa-user"></i> Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>User Profile</h2>
+    <p>Email: <span id="userEmail"></span></p>
+    <button id="logoutBtn">Logout</button>
+  </main>
+
+  <script>
+    const userEmailSpan = document.getElementById('userEmail');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    const email = localStorage.getItem('userEmail');
+    userEmailSpan.textContent = email ? email : 'No user logged in';
+
+    logoutBtn.addEventListener('click', () => {
+      localStorage.removeItem('loggedIn');
+      localStorage.removeItem('userEmail');
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>

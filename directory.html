@@ -1,37 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alumni Directory</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alumni Directory</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Alumni Directory</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="login.html">Login</a>
-        </nav>
-    </header>
-    <main>
-        <section class="directory">
-            <h2>Find Alumni</h2>
-            <input type="text" placeholder="Search by name or graduation year">
-            <div class="alumni-list">
-                <div class="alumni">
-                    <h3>John Doe</h3>
-                    <p>Class of 2015 - Software Engineer</p>
-                </div>
-                <div class="alumni">
-                    <h3>Jane Smith</h3>
-                    <p>Class of 2017 - Marketing Specialist</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Alumni Management System</p>
-    </footer>
+  <header>
+    <div class="header-content">
+      <h1>Mohan Babu University</h1>
+      <p class="tagline">Alumni Manager</p>
+    </div>
+    <nav>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fa fa-info-circle"></i> About Us</a></li>
+        <li><a href="events.html"><i class="fa fa-calendar"></i> Events</a></li>
+        <li><a href="newalumni.html" target="_blank"><i class="fa fa-user-plus"></i> New Alumni</a></li>
+        <li><a href="directory.html"><i class="fa fa-users"></i> Directory</a></li>
+        <li id="loginTab"><a href="login.html"><i class="fa fa-sign-in-alt"></i> Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="directory-main">
+    <h2 style="text-align:center;margin-bottom:18px;">Alumni Directory</h2>
+    <div style="width: 100%; display: flex; justify-content: center; margin-bottom: 30px;">
+      <input type="text" id="searchInput" placeholder="Search by name, year or role..." style="max-width: 480px; width: 100%; padding: 12px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;" />
+    </div>
+    <div class="profiles-wrapper" id="profilesWrapper">
+      <div class="profile-card">
+        <div class="alumni-name">John Doe</div>
+        <div class="alumni-role">Class of 2015</div>
+        <div class="alumni-info">Software Engineer</div>
+        <div class="alumni-info">john.doe@email.com</div>
+      </div>
+      <div class="profile-card">
+        <div class="alumni-name">Jane Smith</div>
+        <div class="alumni-role">Class of 2017</div>
+        <div class="alumni-info">Marketing Specialist</div>
+        <div class="alumni-info">jane.smith@email.com</div>
+      </div>
+      <div class="profile-card">
+        <div class="alumni-name">Alice Johnson</div>
+        <div class="alumni-role">Class of 2018</div>
+        <div class="alumni-info">Data Scientist</div>
+        <div class="alumni-info">alice.johnson@email.com</div>
+      </div>
+      <div class="profile-card">
+        <div class="alumni-name">Bob Brown</div>
+        <div class="alumni-role">Class of 2016</div>
+        <div class="alumni-info">Product Manager</div>
+        <div class="alumni-info">bob.brown@email.com</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2024 Mohan Babu University Alumni Management System</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('searchInput').addEventListener('input', function() {
+      const filter = this.value.trim().toLowerCase();
+      const cards = document.getElementsByClassName('profile-card');
+      Array.from(cards).forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(filter) ? '' : 'none';
+      });
+    });
+  </script>
 </body>
 </html>
